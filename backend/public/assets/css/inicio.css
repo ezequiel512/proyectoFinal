@@ -1,0 +1,157 @@
+header{
+  margin-left: -10px;
+  margin-top: -10px;
+  background-color: #F5F5F5;
+  width: 100.9%;
+  height: 150px;
+}
+
+#imgLogo{
+  padding-left: 1%;
+  float: left ;
+  margin-top: 1%;
+  width :200px;
+}
+
+#busqueda{
+  padding-left: 20%;
+  padding-top: 3.5%;
+}
+
+#barraBusqueda{
+  width: 70%;
+  height: 50px;
+  margin-top: -20%;
+}
+
+#menuNavegacion{
+  background-color: white;
+  margin-left: -8px;
+  width: 100.9%;
+  position: sticky;
+}
+
+#boton{
+  background-color: #0F506C;
+  width: 4%;
+  height: 10px;
+  border: 2px solid black;
+  padding-left: 8%;
+}
+
+#boton:hover{
+  background-color:black;
+}
+
+#textoBoton{
+color: #F5F5F5;
+}
+main{
+  background-color: white;
+}
+.carrusel{
+  margin-left: -8px;
+  width: 100.9%;
+  height: 400px;
+  background-color: #BAE1F2;
+}
+
+.slideshow-container{
+  margin-top: -1%;
+  margin-left: 2%;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 43%;
+  padding: 1%;
+  margin-top: -1%;
+  font-weight: bold;
+  font-size: 200%;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  left: 29.3%;
+  border-radius: 3px 0 0 3px;
+}
+
+#fotocarrusel1{
+  width: 31.2%; 
+  margin-top: 2%
+}
+
+#fotocarrusel2{
+  margin-top: 2.5%;
+  margin-left: 3.3%;
+  width: 25%;
+}
+
+#fotocarrusel3{
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  width: 26%;
+}
+
+#fotocarrusel4{
+  margin-top: 3.5%;
+  margin-left: 3.1%;
+  width: 25%;
+}
+
+.presentacion{
+  width: 35%;
+  margin-left: 35%;
+  margin-top: -14.5%;
+}
+
+.cuadro1{
+  background-color: #0F506C;
+  width: 48%;
+  height: 550px;
+}
+
+.cuadro2{
+  margin-top: -30.6%;
+  margin-left: 52%;
+  background-color: #0F506C;
+  width: 48%;
+  height: 550px;
+}
+
+#tituloCuadro{
+  margin-left: 34%;
+  color: white;
+  font-size: 200%;
+}
+
+#foto1{
+  margin-left: 22%;
+  width: 50%;
+}
+
+footer{
+  margin-top: 1.5%;
+  background-color: rgb(151, 151, 151);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  line-height: 10px;
+  text-indent: 10px;
+}
+
+.iconos{
+  height: 80px;
+  width: 80px;
+}
+
+.contenedoriconos, .contenedorcontacto{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contacto, .otros{
+  font-size: 25px;
+  font-weight: bold;
+}

@@ -1,0 +1,10 @@
+$base:1400;
+$tbase:$base * 1px;
+$tcolumna: calc($base/12);
+$pcolumna: calc($tcolumna/ $base * 100%);
+$mapatamanyo: (sm: 768px, md: 992px, lg: 1400px);
+
+$colorNegro: black;
+$colorGris:gray;
+$colorBlanco: white;
+

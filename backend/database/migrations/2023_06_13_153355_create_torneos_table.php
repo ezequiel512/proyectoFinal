@@ -20,7 +20,7 @@ class CreateTorneosTable extends Migration
             $table->foreign('id_usu')->references('id_usu')->on('usuarios');
             $table->unsignedInteger('num_participantes');
             $table->string('juego');
-            $table->boolean('presencial');
+            $table->enum('presencial', ['presencial', 'telematico']);
             $table->string('ubicacion')->nullable();
             $table->text('descripcion')->nullable();
             $table->timestamps();

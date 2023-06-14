@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Usuario;
+use Illuminate\Support\Facades\View;
 
 class TorneosController extends Controller
 {
@@ -10,7 +12,11 @@ class TorneosController extends Controller
     {
         return view('torneo.creatorneo');
     }
-
+    public function top10()
+{
+    $usuarios = Usuario::orderByDesc('n_victorias')->limit(10)->get();
+    return View::make('top10')->with('usuarios', $usuarios);
+}
     public function procesarFormulario(Request $request)
     {
         // Validar los datos del formulario

@@ -17,7 +17,7 @@ class CreateUsuariosTable extends Migration
             $table->increments('id_usu');
             $table->string('nombre_usuario');
             $table->string('correo_electronico')->unique();
-            $table->string('contasenya');
+            $table->string('contrasenya');
             $table->enum('rol', ['administrador', 'creador', 'participante', 'ambos']);
             $table->text('foto_perfil')->nullable();
             $table->text('descripcion')->nullable();

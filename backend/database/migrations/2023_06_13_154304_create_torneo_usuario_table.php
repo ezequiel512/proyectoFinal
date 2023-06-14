@@ -20,6 +20,7 @@ class CreateTorneoUsuarioTable extends Migration
             $table->foreign('id_usu')->references('id_usu')->on('usuarios')->onDelete('cascade');
             $table->primary(['id_torneo', 'id_usu']);
             $table->timestamps();
+
         });
     }
 

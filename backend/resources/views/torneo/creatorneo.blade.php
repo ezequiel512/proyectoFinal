@@ -11,15 +11,15 @@
             @csrf
             <div class="form-group">
                 <label for="nombre">Nombre de Torneo:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre', auth()->user()->name . ' Torneo') }}" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
             <div class="form-group">
-                <label for="participantes">Participantes del Torneo:</label>
-                <input type="text" class="form-control" id="participantes" name="participantes" value="{{ old('participantes') }}" required>
+                <label for="participantes">Número de participantes:</label>
+                <input type="text" class="form-control" id="participantes" name="participantes" required>
             </div>
             <div class="form-group">
-                <label for="videojuego">Videojuego/Deporte:</label>
-                <input type="text" class="form-control" id="videojuego" name="videojuego" value="{{ old('videojuego') }}" required>
+                <label for="juego">Videojuego/Deporte:</label>
+                <input type="text" class="form-control" id="juego" name="juego" required>
             </div>
             <div class="form-group">
                 <label for="tipo_torneo">Tipo de Torneo:</label><br>
@@ -34,10 +34,13 @@
                 <label for="ubicacion">Ubicación:</label>
                 <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="{{ old('ubicacion') }}">
             </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {

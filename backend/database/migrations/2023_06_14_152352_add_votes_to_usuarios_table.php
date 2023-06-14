@@ -17,6 +17,7 @@ class AddVotesToUsuariosTable extends Migration
             $table->integer('n_victorias');
             $table->integer('n_torneos_creados');
             $table->integer('n_torneos_participados');
+
         });
     }
 

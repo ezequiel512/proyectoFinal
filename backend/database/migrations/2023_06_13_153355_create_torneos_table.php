@@ -24,6 +24,7 @@ class CreateTorneosTable extends Migration
             $table->string('ubicacion')->nullable();
             $table->text('descripcion')->nullable();
             $table->timestamps();
+
         });
     }
 

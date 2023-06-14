@@ -22,6 +22,7 @@ class CreateUsuariosTable extends Migration
             $table->text('foto_perfil')->nullable();
             $table->text('descripcion')->nullable();
             $table->timestamps();
+
         });
     }
 

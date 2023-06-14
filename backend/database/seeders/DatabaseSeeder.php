@@ -1,95 +1,69 @@
 <?php
 
-namespace Database\Seeders;
-
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\Customer;
-use App\Models\User;
-use App\Models\Order;
-use App\Models\Role;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        {
-        Model::unguard();
-        Schema::disableForeignKeyConstraints();
+        $this->call(UsuariosTorneosSeeder::class);
+        $this->call(AddVotesToUsuariosTableSeeder::class);
+    }
+}
 
-        DB::table('role_user')->truncate();
-        DB::table('roles')->truncate();
-        DB::table('orders')->truncate();
-        DB::table('customers')->truncate();
-        DB::table('users')->truncate();
-        DB::table('products')->truncate();
-        DB::table('categories')->truncate();
-        DB::table('category_product')->truncate();
-
-        $userAdmin = User::create([
-            'name' => env('DATABASE_ADMIN'),
-            'email' => env('DATABASE_EMAIL'),
-            'password' => Hash::make(env('DATABASE_PASS')),
-            'email_verified_at' => now()
+class UsuariosTorneosSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('usuarios')->insert([
+            'nombre_usuario' => 'Nombre de usuario',
+            'correo_electronico' => 'correo@example.com',
+            'contrasenya' => 'contraseña',
+            'rol' => 'administrador',
+            'foto_perfil' => null,
+            'descripcion' => null,
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        $roleAdmin = Role::create([
-            'name' => 'Admin'
+        DB::table('torneos')->insert([
+            'nombre_torneo' => 'Nombre del torneo',
+            'id_usu' => 1, // ID del usuario que creó el torneo (asumiendo que el usuario con ID 1 existe)
+            'num_participantes' => 10,
+            'juego' => 'Nombre del juego',
+            'presencial' => 'presencial',
+            'ubicacion' => null,
+            'descripcion' => null,
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
+    }
+}
 
-        $roleCustomer = Role::create([
-            'name' => 'Customer'
+class AddVotesToUsuariosTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('usuarios')->update([
+            'n_victorias' => 0,
+            'n_torneos_creados' => 0,
+            'n_torneos_participados' => 0
         ]);
-
-        $userAdmin->roles()->attach($roleAdmin->id);
-
-        $userCustomers = User::factory(10)
-        ->has(Customer::factory()
-        ->has(Order::factory()->count(3))
-        ->count(1))
-        ->create();
-
-        foreach ($userCustomers as $userCustomer) {
-            $userCustomer->roles()->attach($roleCustomer->id);
-        }
-
-        $productSabor = Product::factory(10)
-        ->create();
-
-        $categorySabor = Category::create([
-            'name' => "Sabor"
-        ]);
-
-        foreach ($productSabor as $productSabor) {
-            $productSabor->categories()->attach($categorySabor->id);
-        }
-
-        $productVaper = Product::factory(10)
-        ->create();
-
-        $categoryVaper = Category::create([
-            'name' => "Vaper"
-        ]);
-
-        foreach ($productVaper as $productVaper) {
-            $productVaper->categories()->attach($categoryVaper->id);
-        }
-
-        Model::reguard();
-
-        Schema::enableForeignKeyConstraints();
-
-        $this->command->alert('¡Tablas actualizadas!');
-        }
     }
 }

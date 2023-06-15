@@ -14,9 +14,9 @@ class AddVotesToUsuariosTable extends Migration
     public function up()
     {
         Schema::table('usuarios', function (Blueprint $table) {
-            $table->integer('n_victorias');
-            $table->integer('n_torneos_creados');
-            $table->integer('n_torneos_participados');
+            $table->integer('n_victorias')->default(0);
+            $table->integer('n_torneos_creados')->default(0);
+            $table->integer('n_torneos_participados')->default(0);
 
         });
     }

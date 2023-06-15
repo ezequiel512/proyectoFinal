@@ -7,7 +7,7 @@
     <h1>Top 10 Usuarios con más Torneos Ganados</h1>
     <ul>
         @foreach ($usuarios as $usuario)
-            <li>{{ $usuario->nombre }} - {{ $usuario->n_victorias }} victorias</li>
+            <li>{{ $usuario->nombre_usuario }} - {{ $usuario->n_victorias }} victorias</li>
         @endforeach
     </ul>
 </body>

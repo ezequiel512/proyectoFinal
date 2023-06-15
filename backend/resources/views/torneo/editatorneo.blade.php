@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Creando torneo</title>
+    <title>Editando torneo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h2>CREACIÓN DE TORNEO</h2>
-        <form action="{{ url('/torneo/creatorneo') }}" method="POST">
+        <h2>EDITAR TORNEO</h2>
+        <form action="{{ url('/torneo/editatorneo/'.$torneos['id'])}}" method="POST">
+            {{method_field('PUT')}}
             @csrf
             <div class="form-group">
                 <label for="nombre">Nombre de Torneo:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{$torneos->nombre_torneo}}" required>
             </div>
             <div class="form-group">
                 <label for="participantes">Número de participantes:</label>
-                <input type="text" class="form-control" id="participantes" name="participantes" required>
+                <input type="text" class="form-control" id="participantes" name="participantes" value="{{$torneos->num_participantes}}" required>
             </div>
             <div class="form-group">
                 <label for="juego">Videojuego/Deporte:</label>
-                <input type="text" class="form-control" id="juego" name="juego" required>
+                <input type="text" class="form-control" id="juego" name="juego" value="{{$torneos->juego}}" required>
             </div>
             <div class="form-group">
                 <label for="tipo_torneo">Tipo de Torneo:</label><br>
@@ -36,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+                <textarea name="descripcion" id="descripcion" class="form-control" rows="3" value="{{$torneos->descripcion}}" ></textarea>
              </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

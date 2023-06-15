@@ -16,7 +16,7 @@ class CreateTorneoUsuarioTable extends Migration
         Schema::create('torneo_usuario', function (Blueprint $table) {
             $table->unsignedInteger('id_torneo');
             $table->unsignedInteger('id_usu');
-            $table->foreign('id_torneo')->references('id_torneo')->on('torneos')->onDelete('cascade');
+            $table->foreign('id_torneo')->references('id')->on('torneos')->onDelete('cascade');
             $table->foreign('id_usu')->references('id_usu')->on('usuarios')->onDelete('cascade');
             $table->primary(['id_torneo', 'id_usu']);
             $table->timestamps();

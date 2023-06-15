@@ -14,9 +14,17 @@ use App\Http\Controllers\TorneosController;
 |
 */
 
+/*TORNEOS*/
 Route::get('/torneo/creatorneo', [TorneosController::class, 'crearTorneo']);
-Route::post('/torneo/creatorneo', [TorneosController::class, 'procesarFormulario']);
+Route::post('/torneo/creatorneo', [TorneosController::class, 'procesarFormularioCreacion']);
+
+Route::get('torneo/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);
+Route::put('torneo/editatorneo/{id}', [TorneosController::class, 'procesarFormularioEdicion']);
+
+Route::get('torneo/muestratorneo/{id}', [TorneosController::class, 'mostrarTorneo']);
+
 Route::get('/torneo/top10', [TorneosController::class, 'top10']);
+
 Route::get('/', function () {
     return view('react');
 });

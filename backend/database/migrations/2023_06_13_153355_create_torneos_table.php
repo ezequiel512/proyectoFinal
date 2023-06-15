@@ -14,7 +14,7 @@ class CreateTorneosTable extends Migration
     public function up()
     {
         Schema::create('torneos', function (Blueprint $table) {
-            $table->increments('id_torneo');
+            $table->increments('id');
             $table->string('nombre_torneo');
             $table->unsignedInteger('id_usu');
             $table->foreign('id_usu')->references('id_usu')->on('usuarios');
@@ -24,7 +24,6 @@ class CreateTorneosTable extends Migration
             $table->string('ubicacion')->nullable();
             $table->text('descripcion')->nullable();
             $table->timestamps();
-
         });
     }
 

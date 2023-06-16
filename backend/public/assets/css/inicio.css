@@ -1,157 +1,240 @@
-header{
-  margin-left: -10px;
-  margin-top: -10px;
-  background-color: #F5F5F5;
-  width: 100.9%;
-  height: 150px;
-}
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-#imgLogo{
-  padding-left: 1%;
-  float: left ;
-  margin-top: 1%;
-  width :200px;
-}
+  .row {
+    clear: both;
+  }
 
-#busqueda{
-  padding-left: 20%;
-  padding-top: 3.5%;
-}
+  .col-1 {
+    width: 8.3333333333%;
+  }
 
-#barraBusqueda{
-  width: 70%;
-  height: 50px;
-  margin-top: -20%;
-}
+  .col-2 {
+    width: 16.6666666667%;
+  }
 
-#menuNavegacion{
-  background-color: white;
-  margin-left: -8px;
-  width: 100.9%;
-  position: sticky;
-}
+  .col-3 {
+    width: 25%;
+  }
 
-#boton{
-  background-color: #0F506C;
-  width: 4%;
-  height: 10px;
-  border: 2px solid black;
-  padding-left: 8%;
-}
+  .col-4 {
+    width: 33.3333333333%;
+  }
 
-#boton:hover{
-  background-color:black;
-}
+  .col-5 {
+    width: 41.6666666667%;
+  }
 
-#textoBoton{
-color: #F5F5F5;
-}
-main{
-  background-color: white;
-}
-.carrusel{
-  margin-left: -8px;
-  width: 100.9%;
-  height: 400px;
-  background-color: #BAE1F2;
-}
+  .col-6 {
+    width: 50%;
+  }
 
-.slideshow-container{
-  margin-top: -1%;
-  margin-left: 2%;
-}
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 43%;
-  padding: 1%;
-  margin-top: -1%;
-  font-weight: bold;
-  font-size: 200%;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-.next {
-  left: 29.3%;
-  border-radius: 3px 0 0 3px;
-}
+  .col-7 {
+    width: 58.3333333333%;
+  }
 
-#fotocarrusel1{
-  width: 31.2%; 
-  margin-top: 2%
-}
+  .col-8 {
+    width: 66.6666666667%;
+  }
 
-#fotocarrusel2{
-  margin-top: 2.5%;
-  margin-left: 3.3%;
-  width: 25%;
-}
+  .col-9 {
+    width: 75%;
+  }
 
-#fotocarrusel3{
-  margin-top: 2.5%;
-  margin-left: 2.5%;
-  width: 26%;
-}
+  .col-10 {
+    width: 83.3333333333%;
+  }
 
-#fotocarrusel4{
-  margin-top: 3.5%;
-  margin-left: 3.1%;
-  width: 25%;
-}
+  .col-11 {
+    width: 91.6666666667%;
+  }
 
-.presentacion{
-  width: 35%;
-  margin-left: 35%;
-  margin-top: -14.5%;
-}
+  .col-12 {
+    width: 100%;
+  }
 
-.cuadro1{
-  background-color: #0F506C;
-  width: 48%;
-  height: 550px;
-}
+  @media screen and (min-width: 768px) {
+    .col-sm-1 {
+      width: 8.3333333333%;
+    }
+    .col-sm-2 {
+      width: 16.6666666667%;
+    }
+    .col-sm-3 {
+      width: 25%;
+    }
+    .col-sm-4 {
+      width: 33.3333333333%;
+    }
+    .col-sm-5 {
+      width: 41.6666666667%;
+    }
+    .col-sm-6 {
+      width: 50%;
+    }
+    .col-sm-7 {
+      width: 58.3333333333%;
+    }
+    .col-sm-8 {
+      width: 66.6666666667%;
+    }
+    .col-sm-9 {
+      width: 75%;
+    }
+    .col-sm-10 {
+      width: 83.3333333333%;
+    }
+    .col-sm-11 {
+      width: 91.6666666667%;
+    }
+    .col-sm-12 {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .col-md-1 {
+      width: 8.3333333333%;
+    }
+    .col-md-2 {
+      width: 16.6666666667%;
+    }
+    .col-md-3 {
+      width: 25%;
+    }
+    .col-md-4 {
+      width: 33.3333333333%;
+    }
+    .col-md-5 {
+      width: 41.6666666667%;
+    }
+    .col-md-6 {
+      width: 50%;
+    }
+    .col-md-7 {
+      width: 58.3333333333%;
+    }
+    .col-md-8 {
+      width: 66.6666666667%;
+    }
+    .col-md-9 {
+      width: 75%;
+    }
+    .col-md-10 {
+      width: 83.3333333333%;
+    }
+    .col-md-11 {
+      width: 91.6666666667%;
+    }
+    .col-md-12 {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .col-lg-1 {
+      width: 8.3333333333%;
+    }
+    .col-lg-2 {
+      width: 16.6666666667%;
+    }
+    .col-lg-3 {
+      width: 25%;
+    }
+    .col-lg-4 {
+      width: 33.3333333333%;
+    }
+    .col-lg-5 {
+      width: 41.6666666667%;
+    }
+    .col-lg-6 {
+      width: 50%;
+    }
+    .col-lg-7 {
+      width: 58.3333333333%;
+    }
+    .col-lg-8 {
+      width: 66.6666666667%;
+    }
+    .col-lg-9 {
+      width: 75%;
+    }
+    .col-lg-10 {
+      width: 83.3333333333%;
+    }
+    .col-lg-11 {
+      width: 91.6666666667%;
+    }
+    .col-lg-12 {
+      width: 100%;
+    }
+  }
+  body {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: black;
+  }
 
-.cuadro2{
-  margin-top: -30.6%;
-  margin-left: 52%;
-  background-color: #0F506C;
-  width: 48%;
-  height: 550px;
-}
+  header {
+    background-color: gray;
+  }
+  header #logo img {
+    width: 60%;
+    float: left;
+  }
+  header #logo h1 {
+    color: white;
+    font-size: 200%;
+    margin-left: 12%;
+    margin-top: 3%;
+  }
+  header #inicioRegistro {
+    float: left;
+  }
+  header #inicioRegistro button {
+    margin-top: 3%;
+  }
 
-#tituloCuadro{
-  margin-left: 34%;
-  color: white;
-  font-size: 200%;
-}
+  .carousel {
+    margin-top: 2%;
+    background-color: gray;
+  }
 
-#foto1{
-  margin-left: 22%;
-  width: 50%;
-}
+  #carruselVideojuego {
+    background-image: url("../images/SmashBros.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    width: 100%;
+    height: 600px;
+  }
 
-footer{
-  margin-top: 1.5%;
-  background-color: rgb(151, 151, 151);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  color: rgb(255, 255, 255);
-  line-height: 10px;
-  text-indent: 10px;
-}
+  #carrouselDeporte {
+    background-image: url("../images/deporteCarrousel.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    width: 100%;
+    height: 600px;
+  }
 
-.iconos{
-  height: 80px;
-  width: 80px;
-}
+  #carrouselJuegoDeMesa {
+    background-image: url("../images/ajedrezCarrousel.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    width: 100%;
+    height: 600px;
+  }
 
-.contenedoriconos, .contenedorcontacto{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.contacto, .otros{
-  font-size: 25px;
-  font-weight: bold;
-}
+  #creaUnTorneo {
+    margin-top: 5%;
+    text-align: center;
+  }
+  #creaUnTorneo h2 {
+    color: white;
+  }
+  #creaUnTorneo img {
+    width: 30%;
+  }/*# sourceMappingURL=style.css.map */

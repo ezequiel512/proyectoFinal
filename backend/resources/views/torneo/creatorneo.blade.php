@@ -2,9 +2,12 @@
 <html>
 <head>
     <title>Creando torneo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
+    @extends('layouts.master')
+
+    @section('content')
+
     <div class="container">
         <h2>CREACIÓN DE TORNEO</h2>
         <form action="{{ url('/torneo/creatorneo') }}" method="POST">
@@ -41,6 +44,8 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
+    @endsection
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {

@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\View;
 
 class TorneosController extends Controller
 {
+    public function index()
+    {
+        $torneos = Torneos::all();
+        return view('torneo.index', compact('torneos'));
+    }
     public function top10()
     {
     $usuarios = Usuario::orderByDesc('n_victorias')->limit(10)->get();

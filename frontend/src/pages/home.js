@@ -11,48 +11,6 @@ function Home() {
 
   return (
     <div>
-      <header>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12">
-              <div className="row">
-                {/* LOGO */}
-                <div className="col-6" id="logo">
-                  <a className="navbar-brand d-none d-md-block" href="#">
-                    <img src={Logo} alt="Logo" />
-                  </a>
-                </div>
-                {/* INICIO SESIÓN/REGISTRARSE */}
-                <div className="col-6 d-flex justify-content-end align-items-center" id="inicioRegistro">
-                  <Link to="/login" className="btn btn-dark">Iniciar sesión</Link>
-                  <Link to="/register" className="btn btn-dark">Registro</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* MENÚ DE NAVEGACIÓN */}
-          <nav className="navbar navbar-expand-md">
-            <div className="container-fluid justify-content-center">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link to="/" className="nav-link">Inicio</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/torneos" className="nav-link">Torneos</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/ganadores" className="nav-link">Ganadores</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/nosotros" className="nav-link">Acerca de Nosotros</Link>
-                </li>
-              </ul>
-            </div>
-
-          </nav>
-
-        </div>
-      </header>
 
       {/* Carousel */}
       <div id="demo" className="carousel slide" data-bs-ride="carousel">

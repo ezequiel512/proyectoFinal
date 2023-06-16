@@ -7,6 +7,10 @@ import Label from 'components/Label'
 import { useLogin, useNotify, Notification } from 'react-admin';
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+// eslint-disable-next-line no-restricted-imports
+import Logo from '../images/Logo.png';
 
 const Login = (props) => {
 
@@ -27,6 +31,7 @@ const Login = (props) => {
   return (
     <GuestLayout>
       <AuthCard
+      
         logo={
           <Link to="/">
             <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />

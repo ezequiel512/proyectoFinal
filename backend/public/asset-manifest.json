@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.d9bd5bf1.css",
-    "main.js": "/static/js/main.2b162bc1.js",
+    "main.css": "/static/css/main.2c288788.css",
+    "main.js": "/static/js/main.9e40cecb.js",
     "static/js/787.81f24527.chunk.js": "/static/js/787.81f24527.chunk.js",
-    "static/media/errores-al-vapear-1384x752.jpg": "/static/media/errores-al-vapear-1384x752.4f68ef6172fa737ec430.jpg",
+    "static/media/SmashBros.jpg": "/static/media/SmashBros.7b42ac445c4c325d9838.jpg",
+    "static/media/ImagenPaginaTorneos.png": "/static/media/ImagenPaginaTorneos.d73c397f4ba1f09be400.png",
+    "static/media/deporteCarrousel.jpg": "/static/media/deporteCarrousel.3a6dbab60d32b789fd62.jpg",
+    "static/media/ajedrezCarrousel.jpg": "/static/media/ajedrezCarrousel.706014b157625aded569.jpg",
     "index.html": "/index.html",
-    "main.d9bd5bf1.css.map": "/static/css/main.d9bd5bf1.css.map",
-    "main.2b162bc1.js.map": "/static/js/main.2b162bc1.js.map",
+    "main.2c288788.css.map": "/static/css/main.2c288788.css.map",
+    "main.9e40cecb.js.map": "/static/js/main.9e40cecb.js.map",
     "787.81f24527.chunk.js.map": "/static/js/787.81f24527.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9bd5bf1.css",
-    "static/js/main.2b162bc1.js"
+    "static/css/main.2c288788.css",
+    "static/js/main.9e40cecb.js"
   ]
 }

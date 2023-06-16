@@ -1,12 +1,16 @@
-import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import { Link } from 'react-router-dom';
 import { useAuth } from 'hooks/auth';
-
+// eslint-disable-next-line no-restricted-imports
+import Logo from '../images/Logo.png';
+// eslint-disable-next-line no-restricted-imports
+import trofeo from '../images/ImagenPaginaTorneos.png'
 function Home() {
   const { user } = useAuth({ middleware: 'guest' });
 
   return (
-    <div className="relative flex items-top justify-center min-h-screen 
-    bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+    <div>
       <header>
         <div className="container-fluid">
           <div className="row">
@@ -15,45 +19,38 @@ function Home() {
                 {/* LOGO */}
                 <div className="col-6" id="logo">
                   <a className="navbar-brand d-none d-md-block" href="#">
-                    <img src="./images/Logo.png" alt="Logo" />
+                    <img src={Logo} alt="Logo" />
                   </a>
-                  <h1>TourneyMix</h1>
                 </div>
                 {/* INICIO SESIÓN/REGISTRARSE */}
                 <div className="col-6 d-flex justify-content-end align-items-center" id="inicioRegistro">
-                  <button id="botonInicio" className="btn btn-dark">Iniciar sesión</button>
-                  <button id="botonRegistro" className="btn btn-dark">Registro</button>
+                  <Link to="/login" className="btn btn-dark">Iniciar sesión</Link>
+                  <Link to="/register" className="btn btn-dark">Registro</Link>
                 </div>
               </div>
             </div>
           </div>
           {/* MENÚ DE NAVEGACIÓN */}
-          <div className="row">
-            <div className="col-12 d-flex justify-content-center">
-              <nav className="navbar navbar-expand-md">
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                  <ul className="navbar-nav">
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Inicio</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Lista de Torneos</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Top de Ganadores</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Acerca de Nosotros</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+          <nav className="navbar navbar-expand-md">
+            <div className="container-fluid justify-content-center">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to="/" className="nav-link">Inicio</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/torneos" className="nav-link">Torneos</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/ganadores" className="nav-link">Ganadores</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/nosotros" className="nav-link">Acerca de Nosotros</Link>
+                </li>
+              </ul>
             </div>
-          </div>
+
+          </nav>
+
         </div>
       </header>
 
@@ -69,22 +66,22 @@ function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active" id="carruselVideojuego">
             <div className="carousel-caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat. 
-                Praesent lobortis varius mauris, sed ultricies ante malesuada vitae. Donec rhoncus ullamcorper 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat.
+                Praesent lobortis varius mauris, sed ultricies ante malesuada vitae. Donec rhoncus ullamcorper
                 consequat. Praesent lobortis varius mauris.</p>
             </div>
           </div>
           <div className="carousel-item" id="carrouselDeporte">
             <div className="carousel-caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat. 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat.
                 Praesent lobortis varius mauris, sed ultricies ante malesuada vitae. Donec rhoncus ullamcorper
-                 consequat. Praesent lobortis varius mauris</p>
+                consequat. Praesent lobortis varius mauris</p>
             </div>
           </div>
           <div className="carousel-item" id="carrouselJuegoDeMesa">
             <div className="carousel-caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat. 
-                Praesent lobortis varius mauris, sed ultricies ante malesuada vitae. Donec rhoncus ullamcorper 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus ullamcorper consequat.
+                Praesent lobortis varius mauris, sed ultricies ante malesuada vitae. Donec rhoncus ullamcorper
                 consequat. Praesent lobortis varius mauris</p>
             </div>
           </div>
@@ -105,7 +102,7 @@ function Home() {
           <p></p>
           <button className="btn btn-info">CREAR TORNEO</button>
           <p></p>
-          <img src="./images/ImagenPaginaTorneos.png" alt="Torneo" />
+          <img src={trofeo} alt="Torneo" />
         </section>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

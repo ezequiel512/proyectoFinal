@@ -15,6 +15,7 @@
         <a href="torneos/creatorneo" class="btn btn-primary">Crear Torneo</a>
 
         <!-- Lista de torneos -->
+        <div class="torneo-container">
         @foreach ($torneos as $torneo)
             <div class="torneo">
                 <h3>{{ $torneo->nombre_torneo }}</h3>
@@ -27,10 +28,11 @@
                 @if ($torneo->descripcion)
                     <span>Descripción: {{ $torneo->descripcion }}</span>
                 @endif
-
+                <a href="torneos/editatorneo/{{ $torneo->id}}" class="btn btn-primary">editar torneo Torneo</a>
                 <!-- Botones de inscripción y ver participantes -->
             </div>
         @endforeach
+        </div>
     @endsection
 
 </body>

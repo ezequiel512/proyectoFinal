@@ -15,6 +15,7 @@ use App\Http\Controllers\TorneosController;
 */
 
 /*TORNEOS*/
+
 Route::get('/torneos/creatorneo', [TorneosController::class, 'crearTorneo']);
 Route::post('/torneos/creatorneo', [TorneosController::class, 'procesarFormularioCreacion']);
 Route::get('/torneos', [TorneosController::class, 'index']);
@@ -24,7 +25,11 @@ Route::put('torneo/editatorneo/{id}', [TorneosController::class, 'procesarFormul
 
 Route::get('torneo/muestratorneo/{id}', [TorneosController::class, 'mostrarTorneo']);
 
-Route::get('/ganadores', [TorneosController::class, 'top10']);
+Route::get('ganadores', [TorneosController::class, 'top10']);
+
+route::get('nosotros', function () {
+    return view('torneo/nosotros');
+});
 
 Route::get('/', function () {
     return view('react');
@@ -34,4 +39,4 @@ Route::any('dashboard/{any?}', function () {
     return view('react');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -12,7 +12,7 @@ function Home() {
               <div class="row">
                 {/* <!-- LOGO --> */}
                 <div class="col-6" id="logo">
-                  <a class="navbar-brand d-none d-md-block" href="/   ">
+                  <a class="navbar-brand d-none d-md-block" href="/">
                     <img src="assets/Imagen/Logo.png" alt="Logo" />
                   </a>
                 </div>
@@ -91,7 +91,9 @@ function Home() {
         <section id="creaUnTorneo">
           <h2>Empieza creando tu primer torneo</h2>
           <p></p>
-          <button className="btn btn-info">CREAR TORNEO</button>
+          <div>
+            <a href="/torneos/creatorneo" className="btn btn-info">CREAR TORNEO</a>
+          </div>
           <p></p>
           <img src={trofeo} alt="Torneo" />
         </section>

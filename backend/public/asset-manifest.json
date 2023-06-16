@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2c288788.css",
-    "main.js": "/static/js/main.9e40cecb.js",
+    "main.js": "/static/js/main.f7cdfc0e.js",
     "static/js/787.81f24527.chunk.js": "/static/js/787.81f24527.chunk.js",
     "static/media/SmashBros.jpg": "/static/media/SmashBros.7b42ac445c4c325d9838.jpg",
     "static/media/ImagenPaginaTorneos.png": "/static/media/ImagenPaginaTorneos.d73c397f4ba1f09be400.png",
@@ -9,11 +9,11 @@
     "static/media/ajedrezCarrousel.jpg": "/static/media/ajedrezCarrousel.706014b157625aded569.jpg",
     "index.html": "/index.html",
     "main.2c288788.css.map": "/static/css/main.2c288788.css.map",
-    "main.9e40cecb.js.map": "/static/js/main.9e40cecb.js.map",
+    "main.f7cdfc0e.js.map": "/static/js/main.f7cdfc0e.js.map",
     "787.81f24527.chunk.js.map": "/static/js/787.81f24527.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c288788.css",
-    "static/js/main.9e40cecb.js"
+    "static/js/main.f7cdfc0e.js"
   ]
 }

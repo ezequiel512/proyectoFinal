@@ -16,7 +16,7 @@
                     <div class="row">
                         <!-- LOGO -->
                         <div class="col-6" id="logo">
-                            <a class="navbar-brand d-none d-md-block" href="#">
+                            <a class="navbar-brand d-none d-md-block" href="/   ">
                                 <img src="assets/Imagen/Logo.png" alt="Logo" />
                             </a>
                         </div>

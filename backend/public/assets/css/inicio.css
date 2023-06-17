@@ -199,13 +199,14 @@
     margin-top: 3%;
   }
   .torneo-container {
-    display: flex;
+    display: flex ;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
+    margin:20px;
 }
+
   .torneo {
     background-color:gray;
     color:white;

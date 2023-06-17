@@ -12,8 +12,9 @@
         <!-- vista.blade.php -->
 
         <!-- Botón para crear un nuevo toarneo -->
+        <div class="torneo-container">
         <a href="torneos/creatorneo" class="btn btn-primary">Crear Torneo</a>
-
+        </div>
         <!-- Lista de torneos -->
         <div class="torneo-container">
             @foreach ($torneos as $torneo)

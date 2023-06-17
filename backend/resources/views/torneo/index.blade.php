@@ -11,7 +11,7 @@
     @section('content')
         <!-- vista.blade.php -->
 
-        <!-- Botón para crear un nuevo torneo -->
+        <!-- Botón para crear un nuevo toarneo -->
         <a href="torneos/creatorneo" class="btn btn-primary">Crear Torneo</a>
 
         <!-- Lista de torneos -->
@@ -29,6 +29,8 @@
                     <span>Descripción: {{ $torneo->descripcion }}</span>
                 @endif
                 <a href="torneos/editatorneo/{{ $torneo->id}}" class="btn btn-primary">Editar torneo</a>
+                <a href="torneos/deletetorneo/{{ $torneo->id}}" class="btn btn-danger">Eliminar torneo</a>
+
                 <!-- Botones de inscripción y ver participantes -->
             </div>
         @endforeach

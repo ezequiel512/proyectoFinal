@@ -27,8 +27,6 @@ class UsuariosTorneosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('torneos')->truncate();
-        DB::table('usuarios')->truncate();
 
         DB::table('usuarios')->insert([
             'nombre_usuario' => 'Nombre de usuario',

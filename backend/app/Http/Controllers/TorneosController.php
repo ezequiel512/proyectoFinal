@@ -15,10 +15,11 @@ class TorneosController extends Controller
         $torneos = Torneos::all();
         return view('torneo.index', compact('torneos'));
     }
+
     public function top10()
     {
-    $usuarios = Usuario::orderByDesc('n_victorias')->limit(10)->get();
-    return View::make('torneo.top10')->with('usuarios', $usuarios);
+        $usuarios = Usuario::orderByDesc('n_victorias')->limit(10)->get();
+        return View::make('torneo.top10')->with('usuarios', $usuarios);
     }
 
     public function crearTorneo()
@@ -48,37 +49,49 @@ class TorneosController extends Controller
         $t->descripcion = $validatedData['descripcion'];
         $t->save();
 
-        // Aquí puedes realizar la lógica para procesar los datos del formulario
-        // Acceder a los valores enviados por el formulario utilizando $request->input('nombre_del_campo')
-        // Guardar en la base de datos, enviar correos electrónicos, etc.
-        return redirect()->action([ControllersTorneosController::class, 'index']);
+        return redirect()->route('torneos.index');
     }
 
-    public function editarTorneo($id){
-
-        $torneos = Torneos::findOrFail($id);
-        return view('torneo.editatorneo', array('torneos' => $torneos));
+    public function editarTorneo($id)
+    {
+        $torneo = Torneos::findOrFail($id);
+        return view('torneo.editatorneo', compact('torneo'));
     }
 
     public function procesarFormularioEdicion(Request $request, $id)
     {
-        $torneoEditado = $request->all();
-        $torneo = Torneos::findOrFail($id);
+        $validatedData = $request->validate([
+            'nombre' => 'required',
+            'participantes' => 'required',
+            'juego' => 'required',
+            'tipo_torneo' => 'required|in:presencial,telematico',
+            'ubicacion' => 'required_if:tipo_torneo,presencial',
+            'descripcion' => ''
+        ]);
 
-        $torneo->nombre_torneo = $torneoEditado['nombre'];
-        $torneo->num_participantes = $torneoEditado['participantes'];
-        $torneo->juego = $torneoEditado['juego'];
-        $torneo->presencial = $torneoEditado['tipo_torneo'];
-        $torneo->ubicacion = $torneoEditado['ubicacion'];
-        $torneo->descripcion = $torneoEditado['descripcion'];
+        $torneo = Torneos::findOrFail($id);
+        $torneo->nombre_torneo = $validatedData['nombre'];
+        $torneo->num_participantes = $validatedData['participantes'];
+        $torneo->juego = $validatedData['juego'];
+        $torneo->presencial = $validatedData['tipo_torneo'];
+        $torneo->ubicacion = $validatedData['ubicacion'];
+        $torneo->descripcion = $validatedData['descripcion'];
         $torneo->save();
 
-        return redirect()->action([ControllersTorneosController::class, 'index']);
+        return redirect()->route('torneos.index');
     }
 
     public function mostrarTorneo($id)
     {
         $torneo = Torneos::findOrFail($id);
-        return view('torneo.muestratorneo', array('torneo' => $torneo));
+        return view('torneo.muestratorneo', compact('torneo'));
+    }
+
+    public function borrarTorneo($id)
+    {
+        $torneo = Torneos::findOrFail($id);
+        $torneo->delete();
+
+        return redirect()->route('torneos.index');
     }
 }

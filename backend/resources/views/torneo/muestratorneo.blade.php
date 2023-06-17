@@ -27,12 +27,14 @@
                     <span>Descripción: {{ $torneo->descripcion }}</span>
                 @endif
 
-                <h1>Lista de Usuarios</h1>
-                <ul>
-                    @foreach ($torneo->usuarios as $usuario)
-                    <li>{{ $usuario->nombre }}</li>
+                <h3>Lista de Usuarios</h3>
+                @foreach ($torneo->usuarios as $usuarioAsociado)
+                    <div>
+                        <p>Nombre: {{ $usuarioAsociado->nombre }}</p>
+                        <p>Email: {{ $usuarioAsociado->email }}</p>
+                        <!-- Mostrar más detalles según sea necesario -->
+                    </div>
                 @endforeach
-                </ul>
                 <!-- Agrega aquí los botones adicionales si es necesario -->
             </div>
         </div>

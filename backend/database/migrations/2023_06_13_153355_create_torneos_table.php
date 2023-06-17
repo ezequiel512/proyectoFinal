@@ -17,7 +17,7 @@ class CreateTorneosTable extends Migration
             $table->increments('id');
             $table->string('nombre_torneo');
             $table->unsignedInteger('id_usu');
-            $table->foreign('id_usu')->references('id_usu')->on('usuarios');
+            $table->foreign('id_usu')->references('id_usu')->on('usuarios')->onDelete('cascade');
             $table->unsignedInteger('num_participantes');
             $table->string('juego');
             $table->enum('presencial', ['presencial', 'telematico']);

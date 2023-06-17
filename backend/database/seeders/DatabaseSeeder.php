@@ -1,5 +1,6 @@
 <?php
 
+use Facade\FlareClient\Truncation\TruncationStrategy;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +27,9 @@ class UsuariosTorneosSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('torneos')->truncate();
+        DB::table('usuarios')->truncate();
+
         DB::table('usuarios')->insert([
             'nombre_usuario' => 'Nombre de usuario',
             'correo_electronico' => 'correo@example.com',

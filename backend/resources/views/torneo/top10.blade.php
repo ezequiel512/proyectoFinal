@@ -3,6 +3,7 @@
 
 <head>
     <title>Top 10 Usuarios</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>

@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>sobre nosotros</title>
+    <title>Sobre nosotros</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>

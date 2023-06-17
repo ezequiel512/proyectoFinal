@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Creando torneo</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 <body>
     @extends('layouts.master')

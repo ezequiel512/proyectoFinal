@@ -3,6 +3,7 @@
 
 <head>
     <title>Registro</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>
@@ -13,7 +14,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -35,6 +35,23 @@
                                 <input id="correo_electronico" class="block mt-1 w-full" type="email" name="correo_electronico" :value="old('correo_electronico')" required />
                             </div>
 
+                            <!--Roles -->
+                            <div class="mt-4">
+                                <label for="rol">Rol: </label><br>
+
+                                <label class="form-check-label col-md-4 col-form-label text-md-right  block mt-1 w-full">
+                                    <input type="radio" class="form-check-input" name="rol" value="creador">Creador
+                                </label><br>
+
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input block mt-1 w-full" name="rol" value="participante">Participante
+                                </label><br>
+
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input  block mt-1 w-full" name="rol" value="ambos">Ambos
+                                </label>
+                            </div>
+
                             <!-- Password -->
                             <div class="mt-4">
                                 <label for="contrasenya"
@@ -48,7 +65,7 @@
 
                             <!-- Confirm Password -->
                             <div class="mt-4">
-                                <label for="password_confirmation" :value="__('Confirm Password')">Confirma contraseña: </label>
+                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-right" :value="__('Confirm Password')">{{ __('Confirma contraseña: ') }}</label>
 
                                 <input id="password_confirmation" class="block mt-1 w-full"
                                                 type="password"
@@ -56,12 +73,12 @@
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                                    {{ __('Already registered?') }}
+                                <a class="underline text-sm text-gray-600 hover:text-gray-900 col-md-4" href="{{ route('login') }}">
+                                    {{ __('¿Ya te has registrado?') }}
                                 </a>
 
-                                <button class="ml-4">
-                                    {{ __('Register') }}
+                                <button class="mt-4 btn-danger">
+                                    {{ __('Registrarse') }}
                                 </button>
                             </div>
                         </form>

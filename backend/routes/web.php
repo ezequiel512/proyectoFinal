@@ -18,6 +18,7 @@ use App\Http\Controllers\TorneosController;
 
 Route::get('/torneos/creatorneo', [TorneosController::class, 'crearTorneo']);
 Route::post('/torneos/creatorneo', [TorneosController::class, 'procesarFormularioCreacion']);
+
 Route::get('/torneos', [TorneosController::class, 'index']);
 
 Route::get('torneos/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);

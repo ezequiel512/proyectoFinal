@@ -3,6 +3,7 @@
 
 <head>
     <title>Lista Torneos</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>

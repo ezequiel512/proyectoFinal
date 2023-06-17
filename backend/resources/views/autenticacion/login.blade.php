@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Iniciar sesión</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>

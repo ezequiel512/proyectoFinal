@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Editando torneo</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>

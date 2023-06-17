@@ -353,3 +353,15 @@ footer {
 footer p {
     margin: 0;
 }
+
+.login-header{
+background-color: rgb(92, 92, 92) !important;
+color: white !important;
+}
+
+.login-container{
+    margin-top: 40px;
+}
+.login{
+    background-color: gray;
+}

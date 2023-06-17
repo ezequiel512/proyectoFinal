@@ -13,10 +13,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card login-container">
+                        <div class="card-header login-header">{{ __('Login') }}</div>
 
-                        <div class="card-body">
+                        <div class="card-body login">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 

@@ -19,7 +19,7 @@ function Home() {
                 {/* <!-- INICIO SESIÓN/REGISTRARSE --> */}
                 <div class="col-6 d-flex justify-content-end align-items-center" id="inicioRegistro">
                   <a href="login" class="btn btn-dark">Iniciar sesión</a>
-                  <a href="register" class="btn btn-dark">Registro</a>
+                  <a href="registro" class="btn btn-dark">Registro</a>
                 </div>
               </div>
             </div>

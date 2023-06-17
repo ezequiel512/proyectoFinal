@@ -49,7 +49,7 @@ class TorneosController extends Controller
         $t->descripcion = $validatedData['descripcion'];
         $t->save();
 
-        return redirect()->route('torneos.index');
+        return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 
     public function editarTorneo($id)

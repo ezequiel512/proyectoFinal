@@ -263,18 +263,27 @@
 #contenedor-nosotros{
     background-color: gray;
 }
-.top10{
+.top10-list{
     color:white;
-    text-align: center;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
-.top10-list {
+.top10-item {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style-type: none;
     font-size: 20px;
     background-color: rgb(75, 75, 75);
-    margin: 40px auto;
+    margin: 40px 0;
+    padding: 20px;
     min-height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.formulario{
+    color:white;
 }

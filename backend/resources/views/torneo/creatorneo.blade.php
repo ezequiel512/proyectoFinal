@@ -8,7 +8,7 @@
 
     @section('content')
 
-    <div class="container">
+    <div class="container formulario">
         <h2>CREACIÓN DE TORNEO</h2>
         <form action="{{ url('torneos/creatorneo') }}" method="POST">
             @csrf

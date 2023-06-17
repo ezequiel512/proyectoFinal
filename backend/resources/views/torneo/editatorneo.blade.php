@@ -7,7 +7,7 @@
 <body>
     @extends('layouts.master')
     @section('content')
-    <div class="container">
+    <div class="container formulario">
         <h2>EDITAR TORNEO</h2>
         <form action="{{ url('/torneos/editatorneo/'.$torneos['id'])}}" method="POST">
             {{method_field('PUT')}}

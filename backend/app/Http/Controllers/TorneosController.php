@@ -78,7 +78,7 @@ class TorneosController extends Controller
         $torneo->descripcion = $validatedData['descripcion'];
         $torneo->save();
 
-        return redirect()->route('torneos.index');
+        return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 
     public function mostrarTorneo($id)
@@ -92,6 +92,6 @@ class TorneosController extends Controller
         $torneo = Torneos::findOrFail($id);
         $torneo->delete();
 
-        return redirect()->route('torneos.index');
+        return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 }

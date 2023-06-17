@@ -36,13 +36,13 @@
                             <a href="/" class="nav-link">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="torneos" class="nav-link">Torneos</a>
+                            <a href="../../torneos" class="nav-link">Torneos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="ganadores" class="nav-link">Ganadores</a>
+                            <a href="../../ganadores" class="nav-link">Ganadores</a>
                         </li>
                         <li class="nav-item">
-                            <a href="nosotros" class="nav-link">Acerca de Nosotros</a>
+                            <a href="../../nosotros" class="nav-link">Acerca de Nosotros</a>
                         </li>
                     </ul>
                 </div>

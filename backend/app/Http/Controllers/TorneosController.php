@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\TorneosController as ControllersTorneosController;
 use App\Models\Torneos;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
@@ -50,7 +51,7 @@ class TorneosController extends Controller
         // Aquí puedes realizar la lógica para procesar los datos del formulario
         // Acceder a los valores enviados por el formulario utilizando $request->input('nombre_del_campo')
         // Guardar en la base de datos, enviar correos electrónicos, etc.
-        return '¡Formulario enviado correctamente!';
+        return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 
     public function editarTorneo($id){
@@ -72,7 +73,7 @@ class TorneosController extends Controller
         $torneo->descripcion = $torneoEditado['descripcion'];
         $torneo->save();
 
-        return 'Se ha llevado a cabo la edición';
+        return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 
     public function mostrarTorneo($id)

@@ -9,7 +9,7 @@
     @section('content')
     <div class="container">
         <h2>EDITAR TORNEO</h2>
-        <form action="{{ url('/torneo/editatorneo/'.$torneos['id'])}}" method="POST">
+        <form action="{{ url('/torneos/editatorneo/'.$torneos['id'])}}" method="POST">
             {{method_field('PUT')}}
             @csrf
             <div class="form-group">

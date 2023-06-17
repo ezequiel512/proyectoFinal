@@ -20,8 +20,8 @@ Route::get('/torneos/creatorneo', [TorneosController::class, 'crearTorneo']);
 Route::post('/torneos/creatorneo', [TorneosController::class, 'procesarFormularioCreacion']);
 Route::get('/torneos', [TorneosController::class, 'index']);
 
-Route::get('torneo/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);
-Route::put('torneo/editatorneo/{id}', [TorneosController::class, 'procesarFormularioEdicion']);
+Route::get('torneos/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);
+Route::put('torneos/editatorneo/{id}', [TorneosController::class, 'procesarFormularioEdicion']);
 
 Route::get('torneo/muestratorneo/{id}', [TorneosController::class, 'mostrarTorneo']);
 

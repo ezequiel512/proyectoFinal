@@ -28,7 +28,7 @@
                 @if ($torneo->descripcion)
                     <span>Descripción: {{ $torneo->descripcion }}</span>
                 @endif
-                <a href="torneos/editatorneo/{{ $torneo->id}}" class="btn btn-primary">editar torneo Torneo</a>
+                <a href="torneos/editatorneo/{{ $torneo->id}}" class="btn btn-primary">Editar torneo</a>
                 <!-- Botones de inscripción y ver participantes -->
             </div>
         @endforeach

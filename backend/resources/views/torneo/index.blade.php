@@ -28,7 +28,7 @@
                     @if ($torneo->descripcion)
                         <span>Descripción: {{ $torneo->descripcion }}</span>
                     @endif
-                    @if ($usuarioRegistrado)
+                    @if ($usuarioRegistrado ?? '')
                         <a href="torneos/inscribir/{{ $torneo->id }}" class="btn btn-success">Inscribirse</a>
                     @endif
                     <a href="torneos/editatorneo/{{ $torneo->id }}" class="btn btn-primary">Editar torneo</a>

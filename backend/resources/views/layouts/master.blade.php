@@ -3,11 +3,11 @@
 <html>
     <head>
         <script src="inicio.js"></script>
-        <link type="text/css" rel="stylesheet" href="assets/css/inicio.css" />
+        <link type="text/css" rel="stylesheet" href="../../assets/css/inicio.css" />
         <meta charset="UTF-8">
         <title>Webest</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="shortcut icon" href="./Imagen/faviconEmpresa.ico">
+        <link rel="shortcut icon" href="../../assets/Imagen/Favicon.ico">
       </head>
       <header>
         <div class="container-fluid">
@@ -17,7 +17,7 @@
                         <!-- LOGO -->
                         <div class="col-6" id="logo">
                             <a class="navbar-brand d-none d-md-block" href="/   ">
-                                <img src="assets/Imagen/Logo.png" alt="Logo" />
+                                <img src="../../assets/Imagen/Logo.png" alt="Logo" />
                             </a>
                         </div>
                         <!-- INICIO SESIÓN/REGISTRARSE -->

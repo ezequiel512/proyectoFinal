@@ -54,8 +54,8 @@ class TorneosController extends Controller
 
     public function editarTorneo($id)
     {
-        $torneo = Torneos::findOrFail($id);
-        return view('torneo.editatorneo', compact('torneo'));
+        $torneos = Torneos::findOrFail($id);
+        return view('torneo.editatorneo', compact('torneos'));
     }
 
     public function procesarFormularioEdicion(Request $request, $id)

@@ -10,7 +10,7 @@
 
     <div class="container">
         <h2>CREACIÓN DE TORNEO</h2>
-        <form action="{{ url('/torneo/creatorneo') }}" method="POST">
+        <form action="{{ url('torneos/creatorneo') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nombre">Nombre de Torneo:</label>

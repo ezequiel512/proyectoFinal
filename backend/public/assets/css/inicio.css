@@ -245,6 +245,7 @@ header #inicioRegistro button {
 }
 
 .torneo-container {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,7 +253,15 @@ header #inicioRegistro button {
     text-align: center;
     margin: 20px;
 }
-
+.torneo-container-boton{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
 .torneo {
     background-color: gray;
     color: white;
@@ -364,4 +373,7 @@ color: white !important;
 }
 .login{
     background-color: gray;
+}
+.texto{
+    color:white;
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TorneosController;
 
@@ -13,6 +14,10 @@ use App\Http\Controllers\TorneosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// LOGIN
+
+Route::get('/login', [AuthController::class, 'showLoginForm']);
 
 /*TORNEOS*/
 

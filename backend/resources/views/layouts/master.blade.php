@@ -22,7 +22,7 @@
                         </div>
                         <!-- INICIO SESIÓN/REGISTRARSE -->
                         <div class="col-6 d-flex justify-content-end align-items-center" id="inicioRegistro">
-                            <a href="{{ route('login') }}" class="btn btn-dark">Iniciar sesión</a>
+                            <a href="../../login" class="btn btn-dark">Iniciar sesión</a>
                             <a href="{{ route('register') }}" class="btn btn-dark">Registro</a>
                         </div>
                     </div>

@@ -238,3 +238,16 @@ header #inicioRegistro button {
 #creaUnTorneo img {
   width: 30%;
 }/*# sourceMappingURL=style.css.map */
+footer {
+    background-color: gray;
+    color: white;
+    padding: 20px 0;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}

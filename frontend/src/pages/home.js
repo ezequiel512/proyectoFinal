@@ -98,9 +98,23 @@ function Home() {
           <img src={trofeo} alt="Torneo" />
         </section>
       </div>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>© 2023 tourneymix. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6">
+              <p>Contáctanos: info@tourneymix.com</p>
+            </div>
+          </div>
+        </div>
+      </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </div>
+
   );
+
 }
 
 export default Home;

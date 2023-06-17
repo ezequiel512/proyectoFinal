@@ -3,7 +3,6 @@
 
 <head>
     <title>Lista Torneos</title>
-    <link rel="icon" href="../../assets/Imagen/Favicon.ico">
 </head>
 
 <body>
@@ -35,7 +34,7 @@
                     @endif
                     <a href="torneos/editatorneo/{{ $torneo->id }}" class="btn btn-primary">Editar torneo</a>
                     <a href="torneos/deletetorneo/{{ $torneo->id }}" class="btn btn-danger">Eliminar torneo</a>
-
+                    <a href="torneos/muestratorneo/{{ $torneo->id }}" class="btn btn-info">Ver torneo</a>
                     <!-- Botones de inscripción y ver participantes -->
                 </div>
             @endforeach

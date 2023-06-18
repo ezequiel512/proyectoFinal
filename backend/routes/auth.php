@@ -11,7 +11,7 @@ use App\Http\Controllers\AuthController;
 
 Route::post('/registro', [AuthController::class, 'registro'])->name('registro');
 
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')

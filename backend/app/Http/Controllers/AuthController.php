@@ -32,13 +32,19 @@ class AuthController extends Controller
         return view('autenticacion.registro');
     }
 
-    public function login(LoginRequest $data)
+    public function login(LoginRequest $request)
     {
-        $data->authenticate();
+        $credentials = $request->only('correo_electronico', 'contrasenya');
 
-        $data->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        return response()->noContent();
+            return redirect('/torneos');
+        }
+
+        return back()->withErrors([
+            'correo_electronico' => 'Las credenciales no coinciden.',
+        ]);
     }
 
     protected function registro(Request $data)

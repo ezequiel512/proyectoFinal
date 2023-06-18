@@ -26,8 +26,9 @@
 
                                     <div class="col-md-6">
                                         <input id="correo_electronico" type="email"
-                                            class="form-control @error('correo_electronico') is-invalid @enderror" name="correo_electronico"
-                                            value="{{ old('correo_electronico') }}" required autocomplete="correo_electronico" autofocus>
+                                            class="form-control @error('correo_electronico') is-invalid @enderror"
+                                            name="correo_electronico" value="{{ old('correo_electronico') }}" required
+                                            autocomplete="correo_electronico" autofocus>
 
                                         @error('correo_electronico')
                                             <span class="invalid-feedback" role="alert">
@@ -39,12 +40,12 @@
 
                                 <div class="form-group row">
                                     <label for="password"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                        class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="contrasenya" type="password"
-                                            class="form-control @error('contrasenya') is-invalid @enderror" name="contrasenya"
-                                            required autocomplete="current-contrasenya">
+                                            class="form-control @error('contrasenya') is-invalid @enderror"
+                                            name="contrasenya" required autocomplete="current-contrasenya">
 
                                         @error('contrasenya')
                                             <span class="invalid-feedback" role="alert">
@@ -73,11 +74,21 @@
                                             {{ __('Login') }}
                                         </button>
 
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        @if (Route::has('contrasenya.request'))
+                                            <a class="btn btn-link" href="{{ route('contrasenya.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+
                                     </div>
                                 </div>
                             </form>
@@ -88,4 +99,5 @@
         </div>
     @endsection
 </body>
+
 </html>

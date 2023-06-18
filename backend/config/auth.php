@@ -68,6 +68,8 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\Usuarios::class,
+            'table' => 'usuarios',
+            'key' => 'correo_electronico', // Nombre de la columna correspondiente al correo electrónico
         ],
 
 

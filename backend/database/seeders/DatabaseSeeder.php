@@ -45,7 +45,6 @@ class UsuariosTorneosSeeder extends Seeder
             'correo_electronico' => 'correo@example.com',
             'contrasenya' => 'contraseña',
             'rol' => 'administrador',
-            'foto_perfil' => null,
             'descripcion' => null,
             'created_at' => now(),
             'updated_at' => now()

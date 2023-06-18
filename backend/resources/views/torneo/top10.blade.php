@@ -13,7 +13,8 @@
             <h1>Top 10 Usuarios con más Torneos Ganados</h1>
             <ul>
                 @foreach ($usuarios as $posicion => $usuario)
-                    <li class="top10-item">{{ $posicion + 1 }}. {{ $usuario->nombre_usuario }} - {{ $usuario->n_victorias }} victorias</li>
+                    <li class="top10-item">{{ $posicion + 1 }}. <img src={{$usuario->foto_perfil}} class="rounded-circle" style="width: 7%"/>
+                        {{ $usuario->nombre_usuario }} - {{ $usuario->n_victorias }} victorias</li>
                 @endforeach
 
             </ul>

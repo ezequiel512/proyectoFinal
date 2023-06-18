@@ -13,7 +13,7 @@
 
         <!-- Botón para crear un nuevo toarneo -->
         <div class="torneo-container-boton">
-            <@if (Auth::check())
+            @if (Auth::check())
                 <a href="torneos/creatorneo" class="btn btn-primary">Crear Torneo</a>
             @else
                 <p class="texto">Debes iniciar sesión para crear un torneo. <a href="login" class="btn btn-primary">Iniciar sesión</a></p>

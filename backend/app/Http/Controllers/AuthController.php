@@ -10,6 +10,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthController extends Controller
 {
@@ -29,6 +30,15 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         return view('autenticacion.registro');
+    }
+
+    public function login(LoginRequest $data)
+    {
+        $data->authenticate();
+
+        $data->session()->regenerate();
+
+        return response()->noContent();
     }
 
     protected function registro(Request $data)
@@ -51,7 +61,7 @@ class AuthController extends Controller
 
         Auth::login($usuario);
 
-        return response()->noContent();
+        return redirect('/torneos');
     }
     public function destroy(Request $request)
     {
@@ -61,7 +71,7 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return response()->noContent();
+        return redirect('/'); // Cambia la ruta según tus necesidades
     }
     protected function authenticated(Request $request, $user)
     {

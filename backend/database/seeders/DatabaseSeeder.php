@@ -3,6 +3,7 @@
 use App\Models\Torneos;
 use App\Models\Usuarios;
 use Facade\FlareClient\Truncation\TruncationStrategy;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +44,7 @@ class UsuariosTorneosSeeder extends Seeder
         DB::table('usuarios')->insert([
             'nombre_usuario' => 'Nombre de usuario',
             'correo_electronico' => 'correo@example.com',
-            'contrasenya' => 'contraseña',
+            'contrasenya' => Hash::make('contraseña'),
             'rol' => 'administrador',
             'descripcion' => null,
             'created_at' => now(),

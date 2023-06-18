@@ -39,8 +39,8 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
+                                    <label for="contrasenya"
+                                        class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="contrasenya" type="password"

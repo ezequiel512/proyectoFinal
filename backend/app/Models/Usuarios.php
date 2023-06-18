@@ -10,8 +10,11 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 class Usuarios extends Authenticatable implements AuthenticatableContract
 {
     use HasFactory;
+    protected $table = 'usuarios';
 
     protected $fillable = ['nombre_usuario', 'correo_electronico', 'contrasenya', 'rol'];
+
+    protected $passwordName = 'contrasenya'; // Actualiza esta línea
 
     protected $primaryKey = 'id_usu';
 

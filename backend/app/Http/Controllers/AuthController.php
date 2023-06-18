@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return response()->noContent();
+        return redirect('/torneos');
     }
 
     protected function registro(Request $data)

@@ -20,7 +20,9 @@ use App\Http\Controllers\TorneosController;
 
 //Route::get('/login', [AuthController::class, 'showLoginForm']);
 Route::get('/login', [AuthController::class, 'showLoginForm']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('guest')
+    ->name('login.post');
 
 //Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 

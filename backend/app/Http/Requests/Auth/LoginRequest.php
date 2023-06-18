@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\Usuarios;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -45,12 +47,23 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('correo_electronico', 'contrasenya'), $this->boolean('remember'))) {
+        $credentials = [
+            'correo_electronico' => $this->input('correo_electronico'),
+            'password' => $this->input('contrasenya')
+        ];
+
+        $passwordField = 'contrasenya'; // El nombre del campo en la base de datos
+
+        $user = Usuarios::where('correo_electronico', $credentials['correo_electronico'])->first();
+
+        if (!$user || !Hash::check($credentials['password'], $user->{$passwordField})) {
+
             throw ValidationException::withMessages([
                 'correo_electronico' => __('auth.failed'),
             ]);
         }
     }
+
 
     /**
      * Ensure the login request is not rate limited.
@@ -61,7 +74,7 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited()
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
+        if (!RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
             return;
         }
 

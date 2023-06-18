@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TorneosController;
+use App\Http\Controllers\PerfilController;
 
 
 /*
@@ -49,8 +50,7 @@ Route::get('/ganadores', [TorneosController::class, 'top10']);
 
 Route::post('/torneos/inscribir/{id}', [TorneosController::class, 'registrarUsuarioTorneo']);
 
-Route::get('/perfil/{id_usu}', 'PerfilController@show')->name('perfil.show');
-
+Route::get('/perfil/{id_usu}', [PerfilController::class, 'show']);
 
 route::get('/nosotros', function () {
     return view('torneo/nosotros');

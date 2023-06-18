@@ -11,6 +11,6 @@ class PerfilController extends Controller
     {
         $usuario = Usuarios::find($id_usu); // Ajusta el nombre del modelo Usuario y la columna correspondiente a tu tabla de usuarios
 
-        return view('perfil', compact('usuario'));
+        return view('usuario', compact('usuario'));
     }
 }

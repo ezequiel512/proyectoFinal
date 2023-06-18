@@ -47,6 +47,8 @@ Route::get('/torneos/deletetorneo/{id}', [TorneosController::class, 'borrarTorne
 
 Route::get('/ganadores', [TorneosController::class, 'top10']);
 
+Route::post('/torneos/inscribir/{id}', [TorneosController::class, 'registrarUsuarioTorneo']);
+
 Route::get('/perfil/{id_usu}', 'PerfilController@show')->name('perfil.show');
 
 

@@ -16,11 +16,10 @@
                     <img src="assets/Imagen/como-escribir-web-sobre-nosotros.jpg" alt="Imagen" class="img-fluid">
                 </div>
                 <div class="col-md-6 text-center">
-                    <h2 >Texto a la derecha</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales, mi id vulputate
-                        consectetur, urna urna elementum arcu, eu tincidunt nisl lacus a sem. Quisque auctor sagittis
-                        tempus. Curabitur malesuada id nisl ut consectetur. Vivamus faucibus, arcu et convallis dignissim,
-                        mi nisl feugiat dolor, non pulvinar turpis elit id risus.</p>
+                    <h2 >¿Quiénes somos?</h2>
+                    <p>Somos dos jóvenes que tuvieron la grandiosa idea de crear una página web para que cualquier persona pueda usarla.
+                        Hemos llevado a cabo este proyecto con gran valor y esperemos que pueda ser de gran utilidad para muchos usuarios.
+                    </p>
                 </div>
             </div>
         </div>

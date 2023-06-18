@@ -19,7 +19,7 @@ class CreateUsuariosTable extends Migration
             $table->string('correo_electronico')->unique();
             $table->string('contrasenya');
             $table->enum('rol', ['administrador', 'creador', 'participante', 'ambos']);
-            $table->text('foto_perfil')->nullable();
+            $table->text('foto_perfil')->default('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
             $table->text('descripcion')->nullable();
             $table->timestamps();
 

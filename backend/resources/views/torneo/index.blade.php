@@ -34,7 +34,10 @@
                         <span>Descripción: {{ $torneo->descripcion }}</span>
                     @endif
                     @if (Auth::check())
-                        <a href="torneos/inscribir/{{ $torneo->id }}" class="btn btn-success">Inscribirse</a>
+                    <form action="{{ url('torneos/inscribir/'.$torneo->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Inscribirse</button>
+                    </form>
                     @endif
 
                     <a href="torneos/muestratorneo/{{ $torneo->id }}" class="btn btn-info">Ver torneo</a>

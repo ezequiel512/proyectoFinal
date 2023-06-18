@@ -87,7 +87,14 @@ class TorneosController extends Controller
     public function mostrarTorneo($id)
     {
         $torneo = Torneos::findOrFail($id);
-        return view('torneo.muestratorneo', compact('torneo'));
+
+        $torneousuario = TorneoUsuario::where('id_torneo', $id)->pluck('id_usu')->toArray();;
+        if($torneousuario != ''){
+            $usuarios = Usuarios::whereIn('id_usu', $torneousuario)->get();
+            return View::make('torneo.muestratorneo', compact('torneo'))->with('usuarios', $usuarios);
+        } else {
+            return view('torneo.muestratorneo', compact('torneo'));
+        }
     }
 
     public function borrarTorneo($id)

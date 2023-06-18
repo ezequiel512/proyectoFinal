@@ -34,16 +34,16 @@ Route::post('/torneos/creatorneo', [TorneosController::class, 'procesarFormulari
 
 Route::get('/torneos', [TorneosController::class, 'index']);
 
-Route::get('torneos/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);
-Route::put('torneos/editatorneo/{id}', [TorneosController::class, 'procesarFormularioEdicion']);
+Route::get('/torneos/editatorneo/{id}', [TorneosController::class, 'editarTorneo']);
+Route::put('/torneos/editatorneo/{id}', [TorneosController::class, 'procesarFormularioEdicion']);
 
-Route::get('torneos/muestratorneo/{id}', [TorneosController::class, 'mostrarTorneo']);
+Route::get('/torneos/muestratorneo/{id}', [TorneosController::class, 'mostrarTorneo']);
 
-Route::get('torneos/deletetorneo/{id}', [TorneosController::class, 'borrarTorneo']);
+Route::get('/torneos/deletetorneo/{id}', [TorneosController::class, 'borrarTorneo']);
 
-Route::get('ganadores', [TorneosController::class, 'top10']);
+Route::get('/ganadores', [TorneosController::class, 'top10']);
 
-route::get('nosotros', function () {
+route::get('/nosotros', function () {
     return view('torneo/nosotros');
 });
 

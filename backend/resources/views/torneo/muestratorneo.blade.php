@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>mostrar Torneos</title>
+    <title>Mostrar Torneos</title>
     <link type="text/css" rel="stylesheet" href="assets/css/inicio.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
@@ -13,7 +13,7 @@
     @section('content')
         <div class="torneo-container">
             <div class="torneo">
-                <h1>datos del torneo</h1>
+                <h1>Datos del torneo</h1>
                 <h3>{{ $torneo->nombre_torneo }}</h3>
 
                 <span>Número de participantes: {{ $torneo->num_participantes }}</span>

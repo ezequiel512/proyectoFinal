@@ -3,6 +3,7 @@
 
 <head>
     <title>Mostrar Torneos</title>
+    <link rel="icon" href="../../assets/Imagen/Favicon.ico"/>
     <link type="text/css" rel="stylesheet" href="assets/css/inicio.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
@@ -27,14 +28,17 @@
                     <span>Descripción: {{ $torneo->descripcion }}</span>
                 @endif
 
-                <h3>Lista de Usuarios</h3>
-                @foreach ($torneo->usuarios as $usuarioAsociado)
-                    <div>
-                        <p>Nombre: {{ $usuarioAsociado->nombre }}</p>
-                        <p>Email: {{ $usuarioAsociado->email }}</p>
-                        <!-- Mostrar más detalles según sea necesario -->
-                    </div>
-                @endforeach
+                @if ($usuarios)
+                    <h3>Lista de Usuarios</h3>
+                    @foreach ($usuarios as $usuario)
+                        <div>
+                            <p>
+                                <img src={{$usuario->foto_perfil}} class="rounded-circle" style="width: 7%"/>
+                            {{ $usuario->nombre_usuario }}
+                            </p>
+                        </div>
+                    @endforeach
+                @endif
                 <!-- Agrega aquí los botones adicionales si es necesario -->
             </div>
         </div>

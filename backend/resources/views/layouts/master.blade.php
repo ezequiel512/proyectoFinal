@@ -18,7 +18,7 @@
                     <div class="row">
                         <!-- LOGO -->
                         <div class="col-6" id="logo">
-                            <a class="navbar-brand d-none d-md-block" href="/   ">
+                            <a class="navbar-brand d-none d-md-block" href="/">
                                 <img src="../../assets/Imagen/Logo.png" alt="Logo" />
                             </a>
                         </div>
@@ -28,6 +28,7 @@
                                 <a href="../../login" class="btn btn-dark">Iniciar sesión</a>
                                 <a href="../../registro" class="btn btn-dark">Registro</a>
                             @else
+                                <a href="../../perfil/{{ $id_usu ?? '' }}" class="btn btn-dark">Ver perfil</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-dark">Cerrar sesión</button>

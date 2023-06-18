@@ -45,6 +45,9 @@ Route::get('/torneos/deletetorneo/{id}', [TorneosController::class, 'borrarTorne
 
 Route::get('/ganadores', [TorneosController::class, 'top10']);
 
+Route::get('/perfil/{id_usu}', 'PerfilController@show')->name('perfil.show');
+
+
 route::get('/nosotros', function () {
     return view('torneo/nosotros');
 });

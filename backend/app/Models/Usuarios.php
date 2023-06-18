@@ -22,5 +22,8 @@ class Usuarios extends Authenticatable implements AuthenticatableContract
     {
         return $this->belongsToMany(Torneos::class, 'torneo_usuario', 'id_usu', 'id_torneo');
     }
-
+    public function getAuthIdentifierName()
+    {
+        return 'id_usu';
+    }
 }

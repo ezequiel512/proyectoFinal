@@ -13,11 +13,11 @@
 
         <!-- Botón para crear un nuevo toarneo -->
         <div class="torneo-container-boton">
-            @if (Auth::check())
+            @if (Auth::check() && (Auth::user()->rol === 'creador' || Auth::user()->rol === 'ambos'))
                 <a href="torneos/creatorneo" class="btn btn-primary">Crear Torneo</a>
             @else
-                <p class="texto">Debes iniciar sesión para crear un torneo. <a href="login" class="btn btn-primary">Iniciar sesión</a></p>
-                @endif
+                <p class="texto">Debes iniciar sesión como creador para crear un torneo.</p>
+            @endif
         </div>
         <!-- Lista de torneos -->
         <div class="torneo-container">

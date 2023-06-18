@@ -377,3 +377,22 @@ color: white !important;
 .texto{
     color:white;
 }
+.profile {
+    background-color: gray;
+    text-align: center;
+    margin: 20px 0;
+    margin-top: 40px;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    margin: 10px 0;
+}
+
+.profile p {
+    margin: 5px 0;
+}

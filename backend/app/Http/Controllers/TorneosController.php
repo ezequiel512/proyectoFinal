@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\TorneosController as ControllersTorneosController;
 use App\Models\Torneos;
-use Illuminate\Http\Request;
 use App\Models\Usuarios;
+use App\Models\TorneoUsuario;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
@@ -95,5 +96,25 @@ class TorneosController extends Controller
         $torneo->delete();
 
         return redirect()->action([ControllersTorneosController::class, 'index']);
+    }
+
+    public function registrarUsuarioEnTorneo($id_torneo)
+    {
+
+        $idUsuario = Auth::id();
+
+        $torneo = Torneos::find($id_torneo);
+        $usuario = Usuarios::find($idUsuario);
+
+        if (!$torneo || !$usuario) {
+            return response()->json('No se encontró el torneo o el usuario.', 404);
+        }
+
+        $torneoUsuario = new TorneoUsuario();
+        $torneoUsuario->id_torneo = $torneo->id;
+        $torneoUsuario->id_usu = $usuario->id;
+        $torneoUsuario->save();
+
+        return response()->json('Usuario registrado en el torneo con éxito.', 200);
     }
 }

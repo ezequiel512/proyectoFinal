@@ -27,6 +27,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/registro', [AuthController::class, 'showRegistrationForm']);
 Route::post('/registro', [AuthController::class, 'registro'])->name('registro');
 
+Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
+
 /*TORNEOS*/
 
 Route::get('/torneos/creatorneo', [TorneosController::class, 'crearTorneo']);

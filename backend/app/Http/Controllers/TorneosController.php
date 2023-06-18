@@ -98,9 +98,8 @@ class TorneosController extends Controller
         return redirect()->action([ControllersTorneosController::class, 'index']);
     }
 
-    public function registrarUsuarioEnTorneo($id_torneo)
+    public function registrarUsuarioTorneo($id_torneo)
     {
-
         $idUsuario = Auth::id();
 
         $torneo = Torneos::find($id_torneo);
@@ -112,9 +111,9 @@ class TorneosController extends Controller
 
         $torneoUsuario = new TorneoUsuario();
         $torneoUsuario->id_torneo = $torneo->id;
-        $torneoUsuario->id_usu = $usuario->id;
+        $torneoUsuario->id_usu = $usuario->id_usu;
         $torneoUsuario->save();
 
-        return response()->json('Usuario registrado en el torneo con éxito.', 200);
+        return view('torneo.muestratorneo', compact('torneo'));
     }
 }

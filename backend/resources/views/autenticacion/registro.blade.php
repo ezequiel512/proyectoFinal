@@ -73,8 +73,9 @@
                                     <label for="password_confirmation" class="col-md-4 col-form-label text-md-right"
                                         :value="__('Confirm Password')">{{ __('Confirma contraseña: ') }}</label>
 
-                                    <input id="password_confirmation" class="block mt-1 w-full" type="password"
-                                        name="password_confirmation" required>
+                                    <input id="contrasenya_confirmation" class="block mt-1 w-full" type="password"
+                                        name="contrasenya_confirmation" required>
+
                                 </div>
 
                                 <div class="flex items-center justify-end mt-4">
@@ -86,6 +87,16 @@
                                     <button class="mt-4 btn-danger">
                                         {{ __('Registrarse') }}
                                     </button>
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
                                 </div>
                             </form>
                         </div>

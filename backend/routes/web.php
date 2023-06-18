@@ -22,7 +22,6 @@ use App\Http\Controllers\PerfilController;
 //Route::get('/login', [AuthController::class, 'showLoginForm']);
 Route::get('/login', [AuthController::class, 'showLoginForm']);
 Route::post('/login', [AuthController::class, 'login'])
-    ->middleware('guest')
     ->name('login.post');
 
 //Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');

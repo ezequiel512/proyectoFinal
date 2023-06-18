@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Torneos;
-use App\Models\Usuario;
+use App\Models\Usuarios;
 use Facade\FlareClient\Truncation\TruncationStrategy;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +33,7 @@ class UsuariosTorneosSeeder extends Seeder
         $torneos = Torneos::inRandomOrder()->limit(5)->get();
 
         // Obtener algunos usuarios existentes
-        $usuarios = Usuario::inRandomOrder()->limit(10)->get();
+        $usuarios = Usuarios::inRandomOrder()->limit(10)->get();
 
         // Asociar usuarios con torneos
         foreach ($torneos as $torneo) {

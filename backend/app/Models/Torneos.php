@@ -11,7 +11,7 @@ class Torneos extends Model
 
     public function usuarios()
     {
-        return $this->belongsToMany(Usuario::class, 'torneo_usuario', 'id_torneo', 'id_usu')
+        return $this->belongsToMany(Usuarios::class, 'torneo_usuario', 'id_torneo', 'id_usu')
             ->withPivot('id_torneo', 'id_usu');
             }
 }

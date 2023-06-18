@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Usuario;
+use App\Models\Usuarios;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,11 +35,11 @@ class AuthController extends Controller
 
         $data->validate([
             'nombre_usuario' => ['required', 'string', 'max:255'],
-            'correo_electronico' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'correo_electronico' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
             'contrasenya' => ['required', 'string', 'min:8', 'confirmed'],
             'rol' => ['required', Rule::in(['creador', 'participante', 'ambos'])],
         ]);
-        $usuario = Usuario::create([
+        $usuario = Usuarios::create([
             'nombre_usuario' => $data['nombre_usuario'],
             'correo_electronico' => $data['correo_electronico'],
             'contrasenya' => Hash::make($data['contrasenya']),

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\TorneosController as ControllersTorneosController;
 use App\Models\Torneos;
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use App\Models\Usuarios;
 use Illuminate\Support\Facades\View;
 
 class TorneosController extends Controller
@@ -18,7 +18,7 @@ class TorneosController extends Controller
 
     public function top10()
     {
-        $usuarios = Usuario::orderByDesc('n_victorias')->limit(10)->get();
+        $usuarios = Usuarios::orderByDesc('n_victorias')->limit(10)->get();
         return View::make('torneo.top10')->with('usuarios', $usuarios);
     }
 

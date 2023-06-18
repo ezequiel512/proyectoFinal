@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Usuario;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -21,32 +23,34 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('autenticacion.login');
     }
 
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('autenticacion.registro');
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required', Rule::in(['creator', 'participant', 'both'])],
-        ]);
-    }
+    protected function registro(Request $data){
 
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role' => $data['role'],
+        $data->validate([
+            'nombre_usuario' => ['required', 'string', 'max:255'],
+            'correo_electronico' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'contrasenya' => ['required', 'string', 'min:8', 'confirmed'],
+            'rol' => ['required', Rule::in(['creador', 'participante', 'ambos'])],
         ]);
+        $usuario = Usuario::create([
+            'nombre_usuario' => $data['nombre_usuario'],
+            'correo_electronico' => $data['correo_electronico'],
+            'contrasenya' => Hash::make($data['contrasenya']),
+            'rol' => $data['rol'],
+        ]);
+
+        event(new Registered($usuario));
+
+        Auth::login($usuario);
+
+        return response()->noContent();
     }
 
     protected function authenticated(Request $request, $user)

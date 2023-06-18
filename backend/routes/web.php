@@ -19,16 +19,13 @@ use App\Http\Controllers\TorneosController;
 // LOGIN
 
 //Route::get('/login', [AuthController::class, 'showLoginForm']);
-Route::get('/login', function () {
-    return view('autenticacion/login');
-});
+Route::get('/login', [AuthController::class, 'showLoginForm']);
 Route::post('/login', [AuthController::class, 'login']);
 
 //Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::get('/registro', function () {
-    return view('autenticacion/registro');
-});
-Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/registro', [AuthController::class, 'showRegistrationForm']);
+Route::post('/registro', [AuthController::class, 'registro'])->name('registro');
 
 /*TORNEOS*/
 

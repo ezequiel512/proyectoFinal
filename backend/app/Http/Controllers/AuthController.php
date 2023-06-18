@@ -34,17 +34,11 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $credentials = $request->only('correo_electronico', 'contrasenya');
+        $request->authenticate();
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        $request->session()->regenerate();
 
-            return redirect('/torneos');
-        }
-
-        return back()->withErrors([
-            'correo_electronico' => 'Las credenciales no coinciden.',
-        ]);
+        return response()->noContent();
     }
 
     protected function registro(Request $data)
@@ -56,6 +50,7 @@ class AuthController extends Controller
             'contrasenya' => ['required', 'string', 'min:8', 'confirmed'],
             'rol' => ['required', Rule::in(['creador', 'participante', 'ambos'])],
         ]);
+
         $usuario = Usuarios::create([
             'nombre_usuario' => $data['nombre_usuario'],
             'correo_electronico' => $data['correo_electronico'],
@@ -78,11 +73,5 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/'); // Cambia la ruta según tus necesidades
-    }
-    protected function authenticated(Request $request, $user)
-    {
-        // Personaliza esta función según tus necesidades
-        // Por ejemplo, redirige al usuario a una página específica después de iniciar sesión
-        return redirect('/torneos');
     }
 }

@@ -28,7 +28,8 @@
                                 <a href="../../login" class="btn btn-dark">Iniciar sesión</a>
                                 <a href="../../registro" class="btn btn-dark">Registro</a>
                             @else
-                                <a href="../../perfil/{{ $id_usu ?? '' }}" class="btn btn-dark">Ver perfil</a>
+                            <a href="../../perfil/{{ Auth::id() }}" class="btn btn-dark">Ver perfil</a>
+
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-dark">Cerrar sesión</button>

@@ -6,6 +6,7 @@ use App\Http\Controllers\TorneosController as ControllersTorneosController;
 use App\Models\Torneos;
 use Illuminate\Http\Request;
 use App\Models\Usuarios;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class TorneosController extends Controller
@@ -29,6 +30,7 @@ class TorneosController extends Controller
 
     public function procesarFormularioCreacion(Request $request)
     {
+        $idUsuario = Auth::id();
         // Validar los datos del formulario
         $validatedData = $request->validate([
             'nombre' => 'required',
@@ -41,7 +43,7 @@ class TorneosController extends Controller
 
         $t = new Torneos;
         $t->nombre_torneo = $validatedData['nombre'];
-        $t->id_usu = 1;
+        $t->id_usu = $idUsuario;
         $t->num_participantes = $validatedData['participantes'];
         $t->juego = $validatedData['juego'];
         $t->presencial = $validatedData['tipo_torneo'];

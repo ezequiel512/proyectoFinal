@@ -33,12 +33,12 @@
                     @if ($torneo->descripcion)
                         <span>Descripción: {{ $torneo->descripcion }}</span>
                     @endif
-                    @if ($usuarioRegistrado ?? '')
+                    @if (Auth::check())
                         <a href="torneos/inscribir/{{ $torneo->id }}" class="btn btn-success">Inscribirse</a>
                     @endif
 
                     <a href="torneos/muestratorneo/{{ $torneo->id }}" class="btn btn-info">Ver torneo</a>
-                    @if ($torneo->id_usu === Auth::id())
+                    @if (Auth::check() && $torneo->id_usu === Auth::id())
                         <a href="torneos/editatorneo/{{ $torneo->id }}" class="btn btn-primary">Editar torneo</a>
                         <a href="torneos/deletetorneo/{{ $torneo->id }}" class="btn btn-danger">Eliminar torneo</a>
                     @endif
